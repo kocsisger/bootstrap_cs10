@@ -16,6 +16,7 @@
         <th scope="col">Last name</th>
         <th scope="col">Email</th>
         <th scope="col">Password</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -25,6 +26,10 @@
             <td> -> [[ ${person.lastName} ]] <- </td>
             <td th:text="${person.email}"/>
             <td th:text="${person.password}"/>
+            <td>
+                <a th:href="@{'/persons/delete/' + ${person.id}}">Delete</a>
+                <a th:href="@{'/persons/update/' + ${person.id}}">Update</a>
+            </td>
         </tr>
     </th:block>
     </tbody>
